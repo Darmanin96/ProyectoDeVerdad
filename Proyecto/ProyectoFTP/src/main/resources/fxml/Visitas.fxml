@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<BorderPane fx:id="root" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dad.Controllers.VisitaController">
+    <center>
+        <GridPane>
+            <columnConstraints>
+                <ColumnConstraints hgrow="ALWAYS" minWidth="100.0" />
+                <ColumnConstraints hgrow="ALWAYS" minWidth="100.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="100.0" vgrow="ALWAYS" />
+                <RowConstraints vgrow="ALWAYS" />
+            </rowConstraints>
+            <children>
+                <!-- Tabla de visitas -->
+                <HBox>
+                    <TableView fx:id="tableVisitas" HBox.hgrow="NEVER">
+                        <columns>
+                            <TableColumn fx:id="IdVisitas" maxWidth="1.7976931348623157E308" minWidth="-1.0" prefWidth="100.0" text="Id de la visita" />
+                            <TableColumn fx:id="Fecha" maxWidth="1.7976931348623157E308" minWidth="-1.0" prefWidth="110.0" text="Fecha de la visita" />
+                            <TableColumn fx:id="Observaciones" prefWidth="120.0" text="Observaciones" />
+                            <TableColumn fx:id="IdAlumno" prefWidth="100.0" text="Id del Alumno" />
+                            <TableColumn fx:id="nombreAlumno" maxWidth="1.7976931348623157E308" minWidth="-1.0" prefWidth="130.0" text="Nombre del Alumno" />
+                            <TableColumn fx:id="apellidosAlumno" maxWidth="1.7976931348623157E308" minWidth="-1.0" prefWidth="130.0" text="Apellidos del Alumno" />
+                            <TableColumn fx:id="IdTutor" maxWidth="1.7976931348623157E308" minWidth="-1.0" prefWidth="100.0" text="Id del Tutor" />
+                            <TableColumn fx:id="nombreTutor" maxWidth="1.7976931348623157E308" minWidth="-1.0" prefWidth="120.0" text="Nombre del Tutor" />
+                        </columns>
+                    </TableView>
+                </HBox>
+                <!-- Panel de detalle -->
+                <HBox alignment="CENTER" spacing="10.0" GridPane.columnIndex="1">
+                    <children>
+                        <AnchorPane fx:id="detallePanel">
+                            <Label layoutX="14.0" layoutY="200.0" text="Seleccione una visita de la izquierda" />
+                        </AnchorPane>
+                    </children>
+                </HBox>
+            </children>
+        </GridPane>
+    </center>
+    <bottom>
+        <!-- Barra de herramientas con botones -->
+        <HBox alignment="BOTTOM_CENTER" spacing="10.0" BorderPane.alignment="BOTTOM_CENTER">
+            <children>
+                <ToolBar>
+                    <items>
+                        <Button fx:id="Añadir" defaultButton="true" mnemonicParsing="false" onAction="#onAñadirAction" text="Añadir" />
+                        <Button fx:id="Eliminar" mnemonicParsing="false" onAction="#onEliminarAction" text="Eliminar" />
+                    </items>
+                </ToolBar>
+            </children>
+        </HBox>
+    </bottom>
+</BorderPane>

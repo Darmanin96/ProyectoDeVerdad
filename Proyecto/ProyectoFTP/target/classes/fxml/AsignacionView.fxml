@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+
+<BorderPane fx:id="root" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dad.Controllers.AsignacionController">
+    <center>
+        <HBox alignment="CENTER">
+            <children>
+                <!-- Tabla de asignaciones -->
+                <TableView fx:id="tableAsignacion" HBox.hgrow="NEVER">
+                    <columns>
+                        <TableColumn fx:id="idAsignacion" prefWidth="120.0" text="Id de la Asignación" />
+                        <TableColumn fx:id="idAlumno" prefWidth="90.0" text="Id del Alumno" />
+                        <TableColumn fx:id="Nombre" text="Nombre" />
+                        <TableColumn fx:id="Apellidos" text="Apellidos" />
+                        <TableColumn fx:id="idEmpresa" prefWidth="100.0" text="Id de la Empresa" />
+                        <TableColumn fx:id="Empresa" prefWidth="100.0" text="Empresa" />
+                        <TableColumn fx:id="IdTutorEmpresa" prefWidth="180.0" text="Id del Tutor de la Empresa" />
+                        <TableColumn fx:id="IdTutorGrupo" prefWidth="150.0" text="Id del Tutor del Docente" />
+                        <TableColumn fx:id="FechaInicio" prefWidth="100.0" text="Fecha de Inicio" />
+                        <TableColumn fx:id="FechaFin" maxWidth="1.7976931348623157E308" minWidth="-1.0" prefWidth="100.0" text="Fecha final" />
+                    </columns>
+                </TableView>
+                <!-- Panel de detalle -->
+                <AnchorPane fx:id="detallePanel" HBox.hgrow="ALWAYS">
+                    <children>
+                        <Label layoutX="20.0" layoutY="200.0" text="Seleccione una asignación de la izquierda" />
+                    </children>
+                </AnchorPane>
+            </children>
+        </HBox>
+    </center>
+    <bottom>
+        <!-- Barra de herramientas -->
+        <HBox alignment="CENTER" spacing="10.0" BorderPane.alignment="BOTTOM_CENTER">
+            <children>
+            <ToolBar>
+               <items>
+                      <Button fx:id="Añadir" defaultButton="true" mnemonicParsing="false" onAction="#onAñadirAction" text="Añadir" />
+                      <Button fx:id="Eliminar" mnemonicParsing="false" onAction="#onEliminarAction" text="Eliminar" />
+               </items>
+            </ToolBar>
+            </children>
+        </HBox>
+    </bottom>
+</BorderPane>

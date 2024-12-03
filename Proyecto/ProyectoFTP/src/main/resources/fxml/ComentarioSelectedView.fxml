@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<BorderPane fx:id="root" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dad.Controllers.ComentariosSelectedController">
+   <center>
+      <GridPane hgap="10" prefHeight="77.0" prefWidth="318.0" vgap="10" BorderPane.alignment="CENTER">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" />
+            <ColumnConstraints hgrow="ALWAYS" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints vgrow="ALWAYS" />
+            <RowConstraints vgrow="ALWAYS" />
+            <RowConstraints vgrow="ALWAYS" />
+            <RowConstraints vgrow="NEVER" />
+         </rowConstraints>
+
+         <!-- Etiquetas -->
+         <Label text="Comentario" GridPane.rowIndex="2">
+            <GridPane.margin>
+               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            </GridPane.margin>
+         </Label>
+         <Label text="Fecha del Comentario" GridPane.rowIndex="1">
+            <GridPane.margin>
+               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            </GridPane.margin>
+         </Label>
+         <Label text="Id de la empresa">
+            <GridPane.margin>
+               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            </GridPane.margin>
+         </Label>
+         <DatePicker fx:id="Fecha" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS">
+            <GridPane.margin>
+               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            </GridPane.margin>
+         </DatePicker>
+         <ChoiceBox fx:id="IdEmpresa" prefWidth="150.0" GridPane.columnIndex="1">
+            <GridPane.margin>
+               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            </GridPane.margin>
+         </ChoiceBox>
+         <TextArea fx:id="Comentario" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <GridPane.margin>
+               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            </GridPane.margin>
+         </TextArea>
+      </GridPane>
+   </center>
+
+   <bottom>
+      <HBox alignment="TOP_RIGHT" spacing="10.0" BorderPane.alignment="TOP_LEFT">
+         <children>
+            <Button fx:id="Añadir" defaultButton="true" mnemonicParsing="false" onAction="#onAñadirAction" text="Actualizar">
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="Cancelar" mnemonicParsing="false" onAction="#onCancelarAction" text="Cancelar">
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="Limpiar" mnemonicParsing="false" onAction="#onLImpiarAction" text="Limpiar">
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+   </bottom>
+</BorderPane>

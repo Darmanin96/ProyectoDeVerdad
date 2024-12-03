@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<BorderPane fx:id="root" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dad.Controllers.tutorEmpresaController">
+    <center>
+        <GridPane>
+            <!-- Columnas para distribuir los elementos con crecimiento automático -->
+            <columnConstraints>
+                <ColumnConstraints hgrow="ALWAYS" minWidth="100.0" />
+                <ColumnConstraints hgrow="ALWAYS" minWidth="100.0" />
+            </columnConstraints>
+
+            <!-- Fila para distribuir de forma flexible -->
+            <rowConstraints>
+                <RowConstraints minHeight="100.0" vgrow="ALWAYS" />
+                <RowConstraints vgrow="ALWAYS" />
+            </rowConstraints>
+
+            <children>
+                <!-- HBox para el TableView -->
+                <HBox>
+                    <children>
+                        <TableView fx:id="table_TutorEmpresa" HBox.hgrow="NEVER">
+                            <columns>
+                                <TableColumn fx:id="idTutor" prefWidth="75.0" text="Id del tutor" />
+                                <TableColumn fx:id="Nombre" prefWidth="75.0" text="Nombre" />
+                                <TableColumn fx:id="Cointacto" prefWidth="75.0" text="Contacto" />
+                                <TableColumn fx:id="idEmpresa" prefWidth="75.0" text="Id de la empresa" />
+                                <TableColumn fx:id="nombreEmpresa" prefWidth="75.0" text="Nombre de la Empresa" />
+                            </columns>
+                        </TableView>
+                    </children>
+                </HBox>
+
+                <!-- HBox para la vista de detalles (panel lateral) -->
+                <HBox alignment="CENTER" spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                    <children>
+                        <AnchorPane fx:id="detallePanel">
+                            <Label layoutX="14.0" layoutY="200.0" text="Seleccione un tutor de la izquierda" />
+                        </AnchorPane>
+                    </children>
+                </HBox>
+            </children>
+        </GridPane>
+    </center>
+
+    <bottom>
+        <!-- HBox para los botones (Añadir, Eliminar) -->
+        <HBox alignment="CENTER" spacing="10.0" BorderPane.alignment="BOTTOM_CENTER">
+            <children>
+                <ToolBar>
+                    <items>
+                        <Button fx:id="Añadir" defaultButton="true" mnemonicParsing="false" onAction="#onAñadirAction" text="Añadir" />
+                        <Button fx:id="Eliminar" mnemonicParsing="false" onAction="#onEliminarAction" text="Eliminar" />
+                    </items>
+                </ToolBar>
+            </children>
+        </HBox>
+    </bottom>
+</BorderPane>
